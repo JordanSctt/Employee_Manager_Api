@@ -1,6 +1,5 @@
 package tech.getarrays.employeemanager.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,8 +45,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
-        employeeService.deletEmployee(id);
+    public ResponseEntity<?> deleteEmployeeById(@PathVariable("id") Long id) {
+        employeeService.deleteEmployeeById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
